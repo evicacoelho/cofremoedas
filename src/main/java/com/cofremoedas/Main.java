@@ -2,7 +2,9 @@ package com.cofremoedas;
 
 import java.util.Scanner;
 
+// classe principal
 public class Main {
+    // método main, ponto de entrada do programa
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         Cofrinho cofre = new Cofrinho();
@@ -22,16 +24,16 @@ public class Main {
 
             switch (opção) {
                 case 1:
-                    adicionarMoeda(cofre, scanner);
+                    adicionarMoeda(cofre, scanner); // chama método para adicionar moeda
                     break;
                 case 2:
-                    removerMoeda(cofre, scanner);
+                    removerMoeda(cofre, scanner); // chama método para remover moeda
                     break;
                 case 3:
-                    cofre.listagemMoedas();
+                    cofre.listagemMoedas(); // chama método pertencente à classe cofre, gerada na abstração da moeda, para listar moedas
                     break;
                 case 4:
-                    double totalConvertido = cofre.totalConvertido();
+                    double totalConvertido = cofre.totalConvertido(); // chama método da classe cofre para calcular o total convertido
                     System.out.printf("Total convertido para Real: %.2f\n", totalConvertido);
                     break;
                 case 0:
@@ -46,6 +48,7 @@ public class Main {
 
     }
 
+    // método para adicionar moeda ao cofre baseado no switch case de cada tipo
     private static void adicionarMoeda(Cofrinho cofre, Scanner scanner) {
         System.out.println("\nEscolha o tipo de moeda:");
         System.out.println("1 - Real");
@@ -76,6 +79,7 @@ public class Main {
         System.out.println("Moeda adicionada com sucesso!");
     }
 
+    // método para remover moeda do cofre baseado no switch case de cada tipo
     private static void removerMoeda(Cofrinho cofre, Scanner scanner) {
         System.out.println("\nEscolha o tipo de moeda a remover:");
         System.out.println("1 - Real");
